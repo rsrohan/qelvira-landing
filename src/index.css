@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Navy from the Qelvira wordmark */
+  --color-brand-50: #eef3fb;
+  --color-brand-100: #d9e3f5;
+  --color-brand-200: #b6c8ea;
+  --color-brand-300: #88a4da;
+  --color-brand-400: #5a7ec6;
+  --color-brand-500: #3a5fb0;
+  --color-brand-600: #274a97;
+  --color-brand-700: #1b397c;
+  --color-brand-800: #0f2a64;
+  --color-brand-900: #0c2251;
+  --color-brand-950: #0a1838;
+
+  /* Green from the logo leaf */
+  --color-leaf-50: #effaeb;
+  --color-leaf-100: #dcf3d3;
+  --color-leaf-200: #bce6ab;
+  --color-leaf-300: #92d57a;
+  --color-leaf-400: #6fc158;
+  --color-leaf-500: #4caa37;
+  --color-leaf-600: #3a9a29;
+  --color-leaf-700: #2f7a22;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    margin: 0;
+    background: white;
+    color: theme(--color-slate-700);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    color: theme(--color-slate-900);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid theme(--color-leaf-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-widest text-leaf-600;
+  }
+  .section-title {
+    @apply mt-3 text-3xl font-bold sm:text-4xl;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand-800 text-white shadow-sm hover:bg-brand-900;
+  }
+  .btn-secondary {
+    @apply border border-slate-300 bg-white text-slate-800 hover:border-slate-400 hover:bg-slate-50;
+  }
+  .btn-whatsapp {
+    @apply bg-[#25D366] text-white hover:bg-[#1eb858];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
