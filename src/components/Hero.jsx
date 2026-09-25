@@ -52,7 +52,7 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="mx-auto w-full max-w-md pb-10 lg:max-w-none">
+        <div className="mx-auto w-full max-w-md sm:pb-10 lg:max-w-none">
           <DashboardMock />
         </div>
       </div>
